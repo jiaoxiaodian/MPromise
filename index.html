@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise</title>
+</head>
+
+<body>
+  <script src="./index.js"></script>
+  <script>
+    const p = new MPromise((resolve, reject) => {
+      setTimeout(() => resolve('哈哈'), 1000);
+      // resolve('哈哈')
+    });
+    p.then(v => {throw v}, r => r).
+      then((v) => console.log(v, 'resolve'), (r) => console.log(r, 'reject'));
+    // console.log(p);
+  </script>
+</body>
+
+</html>
